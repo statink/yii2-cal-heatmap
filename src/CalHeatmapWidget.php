@@ -92,16 +92,6 @@ class CalHeatmapWidget extends Widget
             $locale = self::getDayjsLocaleName(strtolower((string)Yii::$app->language));
             if ($locale) {
                 ArrayHelper::setValue($options, 'date.locale', $locale);
-
-                $am = Yii::$app->assetManager;
-                if ($am instanceof AssetManager) {
-                    array_unshift(
-                        $am->getBundle(CalHeatmapAsset::class)->js,
-                        vsprintf('https://cdn.jsdelivr.net/npm/dayjs@1/locale/%s.js', [
-                            rawurlencode($locale),
-                        ]),
-                    );
-                }
             }
         }
 
