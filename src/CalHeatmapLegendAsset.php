@@ -12,25 +12,18 @@ namespace statink\yii2\calHeatmap;
 
 use yii\web\AssetBundle;
 
-final class CalHeatmapAsset extends AssetBundle
+final class CalHeatmapLegendAsset extends AssetBundle
 {
     /**
-     * @var string $sourcePath
+     * @var string
      */
     public $sourcePath = '@npm/cal-heatmap/dist';
 
     /**
-     * @var string[] $js
+     * @var string[]
      */
     public $js = [
-        'cal-heatmap.min.js',
-    ];
-
-    /**
-     * @var string[] $css
-     */
-    public $css = [
-        'cal-heatmap.css',
+        'plugins/Legend.min.js',
     ];
 
     /**
@@ -38,6 +31,6 @@ final class CalHeatmapAsset extends AssetBundle
      * @phpstan-var class-string<AssetBundle> $depends
      */
     public $depends = [
-        D3Asset::class,
+        CalHeatmapAsset::class,
     ];
 }

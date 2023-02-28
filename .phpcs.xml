@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ruleset name="Custom Standard">
+  <description>A custom coding standard</description>
+
+  <ini name="memory_limit" value="-1" />
+  <arg name="extensions" value="php" />
+  <arg value="p" />
+  <arg value="s" />
+
+  <file>src</file>
+
+  <rule ref="JP3CKI" />
+
+<!--
+  <rule ref="JP3CKI">
+    <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification"/>
+    <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification"/>
+  </rule>
+
+  <rule ref="Squiz.NamingConventions.ValidVariableName">
+    <exclude-pattern>*/models/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+  </rule>
+-->
+
+</ruleset>

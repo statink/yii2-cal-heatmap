@@ -5,15 +5,25 @@
     "description": "cal-heatmap asset bundle for stat.ink",
     "minimum-stability": "stable",
     "require": {
-        "php": ">= 7.1.0",
-        "yiisoft/yii2": "~2.0.15",
-        "npm-asset/cal-heatmap": "^3.6.2"
+        "php": ">= 8.0",
+        "npm-asset/cal-heatmap": "^4.0.0",
+        "yiisoft/yii2": "2.0.*"
+    },
+    "require-dev": {
+        "jp3cki/coding-standard": "^0.1.3"
     },
     "config": {
-        "process-timeout": 1800,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "yiisoft/yii2-composer": true
+        },
         "fxp-asset": {
             "enabled": false
-        }
+        },
+        "platform": {
+            "php": "8.0.28"
+        },
+        "process-timeout": 1800
     },
     "autoload": {
         "psr-4": {
@@ -27,10 +37,6 @@
         }
     ],
     "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packagist.jp"
-        },
         {
             "type": "composer",
             "url": "https://asset-packagist.org"

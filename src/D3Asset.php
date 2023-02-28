@@ -1,6 +1,7 @@
 <?php
+
 /**
- * @copyright Copyright (C) 2015-2018 AIZAWA Hina
+ * @copyright Copyright (C) 2015-2023 AIZAWA Hina
  * @license https://github.com/fetus-hina/stat.ink/blob/master/LICENSE MIT
  * @author AIZAWA Hina <hina@bouhime.com>
  */
@@ -11,9 +12,16 @@ namespace statink\yii2\calHeatmap;
 
 use yii\web\AssetBundle;
 
-class D3Asset extends AssetBundle
+final class D3Asset extends AssetBundle
 {
-    public $sourcePath = '@npm/d3';
+    /**
+     * @var string
+     */
+    public $sourcePath = '@npm/d3/dist';
+
+    /**
+     * @var string[]
+     */
     public $js = [
         'd3.min.js',
     ];
