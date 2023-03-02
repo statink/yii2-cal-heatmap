@@ -12,26 +12,17 @@ namespace statink\yii2\calHeatmap;
 
 use yii\web\AssetBundle;
 
-final class CalHeatmapTooltipAsset extends AssetBundle
+final class PopperAsset extends AssetBundle
 {
     /**
      * @var string
      */
-    public $sourcePath = '@npm/cal-heatmap/dist';
+    public $sourcePath = '@npm/popperjs--core/dist/umd';
 
     /**
      * @var string[]
      */
     public $js = [
-        'plugins/Tooltip.min.js',
-    ];
-
-    /**
-     * @var string[] $depends
-     * @phpstan-var class-string<AssetBundle> $depends
-     */
-    public $depends = [
-        CalHeatmapAsset::class,
-        PopperAsset::class,
+        'popper.min.js',
     ];
 }

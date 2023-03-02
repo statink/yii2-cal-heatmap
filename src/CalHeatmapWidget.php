@@ -15,13 +15,11 @@ use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
-use yii\web\AssetManager;
+use yii\web\JsExpression;
 use yii\web\View;
 
 use function array_merge;
-use function array_unshift;
 use function preg_replace;
-use function rawurlencode;
 use function strtolower;
 use function trim;
 use function vsprintf;
@@ -37,6 +35,11 @@ class CalHeatmapWidget extends Widget
      * @var array<string, mixed>
      */
     public array $jsOptions = [];
+
+    /**
+     * @var array{JsExpression, array<string, mixed>}[]
+     */
+    public array $plugins = [];
 
     /**
      * @var array<string, mixed>
@@ -89,7 +92,12 @@ class CalHeatmapWidget extends Widget
         }
 
         if (ArrayHelper::getValue($options, 'date.locale', null) === null) {
-            $locale = self::getDayjsLocaleName(strtolower((string)Yii::$app->language));
+            $locale = self::getDayjsLocaleName(
+                strtolower(
+                    (string)Yii::$app->language,
+                ),
+            );
+
             if ($locale) {
                 ArrayHelper::setValue($options, 'date.locale', $locale);
             }
@@ -100,8 +108,9 @@ class CalHeatmapWidget extends Widget
         }
 
         $view->registerJs(
-            vsprintf('(new window.CalHeatmap()).paint(%s);', [
+            vsprintf('(new window.CalHeatmap()).paint(%s, %s);', [
                 Json::encode($options),
+                Json::encode($this->plugins),
             ]),
         );
     }

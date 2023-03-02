@@ -6,7 +6,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">= 8.0",
-        "npm-asset/cal-heatmap": "^4.0.0",
+        "npm-asset/cal-heatmap": "^4.0",
+        "npm-asset/popperjs--core": "^2.0",
         "yiisoft/yii2": "2.0.*"
     },
     "require-dev": {
