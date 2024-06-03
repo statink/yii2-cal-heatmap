@@ -1,46 +1,48 @@
 {
     "name": "statink/yii2-cal-heatmap",
-    "type": "yii2-extension",
-    "license": "MIT",
     "description": "cal-heatmap asset bundle for stat.ink",
-    "minimum-stability": "stable",
-    "require": {
-        "php": ">= 8.0",
-        "npm-asset/cal-heatmap": "^4.0",
-        "npm-asset/popperjs--core": "^2.0",
-        "yiisoft/yii2": "2.0.*"
-    },
-    "require-dev": {
-        "jp3cki/coding-standard": "^0.1.3"
-    },
-    "config": {
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "yiisoft/yii2-composer": true
-        },
-        "fxp-asset": {
-            "enabled": false
-        },
-        "platform": {
-            "php": "8.0.28"
-        },
-        "process-timeout": 1800
-    },
-    "autoload": {
-        "psr-4": {
-            "statink\\yii2\\calHeatmap\\": "src"
-        }
-    },
+    "license": "MIT",
+    "type": "yii2-extension",
     "authors": [
         {
             "name": "AIZAWA Hina",
             "email": "hina@bouhime.com"
         }
     ],
+    "require": {
+        "php": ">= 8.2",
+        "npm-asset/cal-heatmap": "^4.2.4",
+        "npm-asset/popperjs--core": "^2.11.8",
+        "yiisoft/yii2": "^2.0.50"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.42",
+        "jp3cki/coding-standard": "^1.0.0"
+    },
     "repositories": [
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ]
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "statink\\yii2\\calHeatmap\\": "src"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "yiisoft/yii2-composer": true
+        },
+        "fxp-asset": {
+            "enabled": false
+        },
+        "platform": {
+            "php": "8.2.0"
+        },
+        "process-timeout": 1800
+    }
 }
